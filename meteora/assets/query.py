@@ -1,10 +1,16 @@
-from main import *
+import sqlite3
+import os
 
-query = 'SELECT CONDICAO FROM PRODUTOS'
+# Caminho absoluto
+caminho_do_banco = os.path.join('meteora', 'assets', 'database', 'primeiro_banco.db')
+banco = sqlite3.connect(caminho_do_banco)
 
-#Consulta com SQL
-def dawdawdwa(query):
-    with engine.connect() as conexao:
-        consulta = conexao.execute(text(query))
-        dados = consulta.fetchall() #Criar dataframe
-    return pd.DataFrame(dados, columns=consulta.keys())
+cursor = banco.cursor()
+#cursor.execute("CREATE TABLE pessoas (nome text, idade int, email text)")
+#cursor.execute("INSERT INTO pessoas VALUES('Maria', 40, 'maria@gmail.com')")
+
+#banco.commit()
+
+query = "SELECT * FROM pessoas"
+view = cursor.execute(query)
+print(view.fetchall())

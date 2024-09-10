@@ -25,4 +25,4 @@ vendedores.to_sql('vendedores', engine, index=False)
 
 #"Inspecionar" para ver se todas as tabelas foram add
 inspector = inspect(engine)
-print(inspector.get_table_names())
+#print(inspector.get_table_names())

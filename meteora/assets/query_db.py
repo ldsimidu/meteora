@@ -2,8 +2,8 @@ import sqlite3
 import os
 
 # Caminho absoluto
-caminho_do_banco = os.path.join('meteora', 'assets', 'database', 'primeiro_banco.db')
-banco = sqlite3.connect(caminho_do_banco)
+caminho_banco_pessoas = os.path.join('meteora', 'assets', 'database', 'primeiro_banco.db')
+banco = sqlite3.connect(caminho_banco_pessoas)
 
 cursor = banco.cursor()
 #cursor.execute("CREATE TABLE pessoas (nome text, idade int, email text)")
@@ -11,6 +11,8 @@ cursor = banco.cursor()
 
 #banco.commit()
 
-query = "SELECT * FROM pessoas"
-view = cursor.execute(query)
+query_pessoas = "SELECT * FROM pessoas"
+
+view = cursor.execute(query_pessoas)
+
 print(view.fetchall())

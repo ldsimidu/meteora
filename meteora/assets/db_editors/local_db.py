@@ -1,6 +1,6 @@
 import sqlite3
 import os
-from db_makers.addtab_pessoas_db import *
+from db_editors.addtab_pessoas_db import *
 
 #Arquivo definindo todos os caminhos das databases do sistema
 

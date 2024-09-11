@@ -12,4 +12,5 @@ cursor.execute("""
     )
 """)
 '''
-cursor.execute("DROP TABLE IF EXISTS sqlite_sequence")
+
+cursor.execute("DROP TABLE IF EXISTS sqlite_sequence") 

@@ -1,4 +1,7 @@
-from query_db import *
+from db_makers.addtab_pessoas_db import *
+
+
+print(view.fetchall())
 
 nome = input("Digite o nome: ")
 idade = int(input("Digite a idade: "))

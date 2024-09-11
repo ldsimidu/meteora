@@ -3,6 +3,7 @@ from db_editors.remtab_pessoas_db import *
 from prettytable import PrettyTable #pip install prettytable
 from functions import *
 
+
 #printa todo o banco de dados atual da tabela de 'pessoas'
 print(view_pessoas.fetchall())
 
@@ -20,7 +21,7 @@ if tabela_inserir == '1':
         cursor.execute("INSERT INTO pessoas (nome, idade, email, telefone, Genero) VALUES (?, ?, ?, ?, ?)", (nome, idade, email, telefone, genero))
 
         banco_meteora.commit()
-        
+
         query_pessoas = "SELECT * FROM pessoas"
         cursor.execute(query_pessoas)
         rows = cursor.fetchall()
@@ -38,20 +39,7 @@ if tabela_inserir == '1':
         # Exibindo a tabela formatada
         print(table)
     else:
-        query_pessoas = "SELECT * FROM pessoas"
-        cursor.execute(query_pessoas)
-        rows = cursor.fetchall()
-
-        # Definindo a tabela
-        table = PrettyTable()
-
-        # Adicionando cabeçalhos
-        table.field_names = ["ID", "Nome", "Idade", "Email", "Telefone", "Genero"]
-
-        # Adicionando as linhas
-        for row in rows:
-            table.add_row(row)
-        print(table)
+        listar_pessoas()
         
         id_exc = input('Digite o ID do cadastro que deseja excluir:\n->')
         cursor.execute("DELETE FROM pessoas WHERE id = ?", (id_exc))

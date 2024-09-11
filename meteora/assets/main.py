@@ -1,15 +1,17 @@
 from db_makers.addtab_pessoas_db import *
+from functions import *
 
+#printa todo o banco de dados atual da tabela de 'pessoas'
+print(view_pessoas.fetchall())
 
-print(view.fetchall())
-
-nome = input("Digite o nome: ")
-idade = int(input("Digite a idade: "))
-email = input("Digite o email: ")
+nome = input("Digite o nome:\n->")
+idade = verificar_numero("Digite a idade:\n->")
+email = input("Digite o email:\n->")
 
 cursor.execute("INSERT INTO pessoas (nome, idade, email) VALUES (?, ?, ?)", (nome, idade, email))
 
-banco.commit()
-print(view.fetchall())
+banco_meteora.commit()
+print(view_pessoas.fetchall())
 
-banco.close()
+#Responsável por fechar a conexão com a database
+banco_meteora.close()

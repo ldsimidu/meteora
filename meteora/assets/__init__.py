@@ -1,2 +1,4 @@
-# meteora/assets/__init__.py
-# Este arquivo torna o diretório my_python_app um pacote Python.
+from app import *
+
+if __name__ == '__main__':
+    app.run(debug=True)

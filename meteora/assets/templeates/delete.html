@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Pessoa</title>
+</head>
+<body>
+    <h1>Excluir Pessoa</h1>
+    <form method="POST">
+        Selecione o ID para excluir:
+        <select name="id">
+            {% for pessoa in pessoas %}
+            <option value="{{ pessoa[0] }}">{{ pessoa[0] }} - {{ pessoa[1] }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Excluir">
+    </form>
+    <a href="/">Voltar</a>
+</body>
+</html>

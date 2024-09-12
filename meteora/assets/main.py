@@ -22,22 +22,7 @@ if tabela_inserir == '1':
 
         banco_meteora.commit()
 
-        query_pessoas = "SELECT * FROM pessoas"
-        cursor.execute(query_pessoas)
-        rows = cursor.fetchall()
-
-        # Definindo a tabela
-        table = PrettyTable()
-
-        # Adicionando cabeçalhos
-        table.field_names = ["ID", "Nome", "Idade", "Email", "Telefone", "Genero"]
-
-        # Adicionando as linhas
-        for row in rows:
-            table.add_row(row)
-
-        # Exibindo a tabela formatada
-        print(table)
+        listar_pessoas()
     else:
         listar_pessoas()
         
